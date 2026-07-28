@@ -30,9 +30,11 @@
 
 ## 3. 登录 Radeon Cloud 并进入 Profile
 
-Credits 到账后，打开 [Radeon Cloud](https://radeon-global.anruicloud.com/)，点击右上角 **Login**，选择 **Login with Email** 并使用对应账号登录。
+Credits 到账后，打开 [AMD 开发者云](https://developer.amd.com.cn/radeon/)。如果从 AMD AI 开发者计划首页进入，请点击页面中的 **AMD 开发者云** 按钮。
 
-![登录 Radeon Cloud](./assets/login.png)
+![点击 AMD 开发者云](./assets/amd-developer-cloud-entry.png)
+
+进入 Radeon Cloud 后，点击右上角 **Login**，选择 **Login with Email** 并使用对应账号登录。
 
 登录后点击右上角头像，在下拉菜单中选择 **Profile**。
 
@@ -286,4 +288,3 @@ curl --fail http://127.0.0.1:8081/
 
 - [AMD 开发者云：兑换 Credits 并启动 LLaMA-Factory](https://github.com/AMD-AIM/AMD_Developers_Notebooks/blob/main/zh/AMD_developer_LLaMAFactory_note_zh.md)
 - [Radeon Cloud User Guide](https://github.com/AMD-DEV-CONTEST/Radeon-hackathon-2026-07/blob/main/Radeon-Cloud-User%20Guide/README.md)
-
