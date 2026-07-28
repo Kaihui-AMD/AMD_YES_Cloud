@@ -283,8 +283,3 @@ curl --fail http://127.0.0.1:8081/
 > 仅关闭 JupyterLab、Notebook、SSH 会话或浏览器标签页不会停止实例。请主动执行 **Destroy Instance**。
 
 销毁前请确认重要文件已经下载，或已经保存在 Persistent (PVC) 存储中。
-
-## 参考资料
-
-- [AMD 开发者云：兑换 Credits 并启动 LLaMA-Factory](https://github.com/AMD-AIM/AMD_Developers_Notebooks/blob/main/zh/AMD_developer_LLaMAFactory_note_zh.md)
-- [Radeon Cloud User Guide](https://github.com/AMD-DEV-CONTEST/Radeon-hackathon-2026-07/blob/main/Radeon-Cloud-User%20Guide/README.md)
