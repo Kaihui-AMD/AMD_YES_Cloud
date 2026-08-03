@@ -407,7 +407,7 @@ def frame_product_map() -> Image.Image:
     text(
         image,
         (960, 1015),
-        "采购时按工作负载、显存、软件兼容性和实测性能判断",
+        "对比时关注工作负载、显存、软件兼容性和实测性能",
         f_regular(23),
         WHITE,
         anchor="mm",
