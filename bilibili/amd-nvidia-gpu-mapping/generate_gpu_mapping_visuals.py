@@ -415,6 +415,81 @@ def frame_product_map() -> Image.Image:
     return image
 
 
+def frame_amd_advantages() -> Image.Image:
+    image = background(151, AMD_RED, CYAN)
+    centered_title(
+        image,
+        "AMD GPU 的几个真优势",
+        "社区视角 · 面向爱好者与开发者 · 不代表厂商官方立场",
+        AMD_ORANGE,
+    )
+    cards = [
+        (
+            "内存更宽裕",
+            "从 Radeon AI PRO 到 Instinct\n更容易完整放下大模型",
+            "32–432GB",
+            AMD_RED,
+            90,
+            255,
+        ),
+        (
+            "ROCm 更开放",
+            "源码可读、可编译、可打补丁\n适合研究底层和性能调优",
+            "OPEN",
+            CYAN,
+            1000,
+            255,
+        ),
+        (
+            "HIP 可迁移",
+            "CUDA 风格编程模型 + HIPIFY\n跨 AMD / NVIDIA 后端更现实",
+            "HIP",
+            AMD_ORANGE,
+            90,
+            510,
+        ),
+        (
+            "FSR 更包容",
+            "公开 SDK · 多 API · 多厂商路径\n游戏开发与硬件覆盖更灵活",
+            "FSR",
+            YELLOW,
+            1000,
+            510,
+        ),
+        (
+            "Linux 更能折腾",
+            "编译器、算子、Profiler 都能深挖\n社区开发者参与感更强",
+            "LINUX",
+            BLUE,
+            90,
+            765,
+        ),
+        (
+            "开放互连路线",
+            "UALink · UALoE · Helios\n减少对单一封闭平台的依赖",
+            "UALink",
+            MAGENTA,
+            1000,
+            765,
+        ),
+    ]
+    for title_value, detail, icon, color, x, y in cards:
+        neon_rect(image, (x, y, x + 830, y + 190), color, fill_alpha=218)
+        neon_circle(image, (x + 115, y + 95), 65, color, fill_alpha=45)
+        text(image, (x + 115, y + 95), icon, f_bold(19 if len(icon) > 5 else 24), color, anchor="mm")
+        text(image, (x + 220, y + 60), title_value, f_bold(31), color, anchor="lm")
+        text(image, (x + 220, y + 124), detail, f_regular(21), WHITE, anchor="lm", spacing=10)
+    label_pill(
+        image,
+        (960, 1015),
+        "不是每一项都赢，但内存、开放度和可玩性很有吸引力",
+        WHITE,
+        1050,
+        23,
+    )
+    return image
+
+
 def frame_hardware_mapping() -> Image.Image:
     image = background(202, AMD_ORANGE, CYAN)
     centered_title(
@@ -738,27 +813,31 @@ def frame_rocm_versions() -> Image.Image:
 
 
 def make_contact_sheet(paths: list[Path]) -> Path:
+    columns = 4 if len(paths) > 9 else 3
+    tile_width = 1920 // columns
+    tile_height = 270 if columns == 4 else 360
     thumbs: list[Image.Image] = []
     for path in paths:
         image = Image.open(path).convert("RGB")
-        image.thumbnail((620, 335), Image.Resampling.LANCZOS)
-        canvas = Image.new("RGBA", (640, 360), rgba(BLACK))
-        canvas.paste(image, ((640 - image.width) // 2, 5))
+        image.thumbnail((tile_width - 20, tile_height - 25), Image.Resampling.LANCZOS)
+        canvas = Image.new("RGBA", (tile_width, tile_height), rgba(BLACK))
+        canvas.paste(image, ((tile_width - image.width) // 2, 3))
         text(
             canvas,
-            (20, 342),
+            (14, tile_height - 8),
             path.stem,
-            f_mono(16),
+            f_mono(14),
             MUTED,
             anchor="ls",
             shadow=False,
         )
         thumbs.append(canvas.convert("RGB"))
 
-    sheet = Image.new("RGB", (1920, 1080), BLACK)
+    rows = math.ceil(len(thumbs) / columns)
+    sheet = Image.new("RGB", (columns * tile_width, rows * tile_height), BLACK)
     for index, thumb in enumerate(thumbs):
-        x = (index % 3) * 640
-        y = (index // 3) * 360
+        x = (index % columns) * tile_width
+        y = (index // columns) * tile_height
         sheet.paste(thumb, (x, y))
     path = OUTPUT_DIR / "gpu_mapping_visuals_contact_sheet.jpg"
     sheet.save(path, quality=92, optimize=True)
@@ -768,6 +847,7 @@ def make_contact_sheet(paths: list[Path]) -> Path:
 def main() -> None:
     frames = [
         ("01_product_landscape.png", frame_product_map),
+        ("10_amd_advantages.png", frame_amd_advantages),
         ("02_hardware_mapping.png", frame_hardware_mapping),
         ("03_gaming_features.png", frame_gaming_features),
         ("04_training_vs_inference.png", frame_workload_decision),

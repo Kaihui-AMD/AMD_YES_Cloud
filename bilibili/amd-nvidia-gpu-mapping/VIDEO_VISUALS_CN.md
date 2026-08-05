@@ -9,14 +9,15 @@
 | 顺序 | 图片 | 建议时长 | 对应口播内容 |
 |---|---|---:|---|
 | 1 | `01_product_landscape.png` | 8-12 秒 | Radeon RX 对应 GeForce RTX，Radeon PRO 对应 RTX PRO，Instinct 对应 NVIDIA 数据中心 GPU |
-| 2 | `02_hardware_mapping.png` | 8-10 秒 | Stream Processor、CU、AI Accelerator 和 Ray Accelerator 的概念对应 |
-| 3 | `03_gaming_features.png` | 8-12 秒 | FSR/DLSS、Anti-Lag/Reflex、AFMF/Smooth Motion、FreeSync/G-SYNC |
-| 4 | `04_training_vs_inference.png` | 10-14 秒 | 解释训练与推理关注的指标不同 |
-| 5 | `05_memory_ladder.png` | 12-18 秒 | 解释不同精度的模型权重和显存容量估算 |
-| 6 | `09_rocm_version_lanes.png` | 10-14 秒 | 区分 Instinct、Radeon/Ryzen 和 MI455X 的软件版本路线 |
-| 7 | `06_training_stack.png` | 10-14 秒 | 训练栈：PyTorch、Primus、RCCL、AITER、Profiler |
-| 8 | `07_inference_stack.png` | 10-14 秒 | 本地 llama.cpp/Ollama 与企业 vLLM/SGLang 两条推理路线 |
-| 9 | `08_deployment_scale.png` | 10-14 秒 | 从工作站、单卡、8-GPU 节点扩展到 Helios 机架系统 |
+| 2 | `10_amd_advantages.png` | 10-15 秒 | 社区视角总结 AMD 在内存、开放软件栈、HIP、FSR、Linux 和开放互连方面的优势 |
+| 3 | `02_hardware_mapping.png` | 8-10 秒 | Stream Processor、CU、AI Accelerator 和 Ray Accelerator 的概念对应 |
+| 4 | `03_gaming_features.png` | 8-12 秒 | FSR/DLSS、Anti-Lag/Reflex、AFMF/Smooth Motion、FreeSync/G-SYNC |
+| 5 | `04_training_vs_inference.png` | 10-14 秒 | 解释训练与推理关注的指标不同 |
+| 6 | `05_memory_ladder.png` | 12-18 秒 | 解释不同精度的模型权重和显存容量估算 |
+| 7 | `09_rocm_version_lanes.png` | 10-14 秒 | 区分 Instinct、Radeon/Ryzen 和 MI455X 的软件版本路线 |
+| 8 | `06_training_stack.png` | 10-14 秒 | 训练栈：PyTorch、Primus、RCCL、AITER、Profiler |
+| 9 | `07_inference_stack.png` | 10-14 秒 | 本地 llama.cpp/Ollama 与企业 vLLM/SGLang 两条推理路线 |
+| 10 | `08_deployment_scale.png` | 10-14 秒 | 从工作站、单卡、8-GPU 节点扩展到 Helios 机架系统 |
 
 ## 剪辑建议
 
@@ -36,6 +37,6 @@ cd bilibili/amd-nvidia-gpu-mapping
 python3 generate_gpu_mapping_visuals.py
 ```
 
-脚本会重新生成 9 张 4K PNG 和一张九宫格预览：
+脚本会重新生成 10 张 4K PNG 和一张总览预览图：
 
 `gpu_mapping_visuals_contact_sheet.jpg`

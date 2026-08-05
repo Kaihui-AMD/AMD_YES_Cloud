@@ -1,14 +1,16 @@
 # AMD GPU 与 NVIDIA GPU 产品及功能对应关系
 
-> 更新日期：2026-08-03
+> 更新日期：2026-08-05
 >
 > 适用场景：GPU 产品科普、技术学习、开发实践、CUDA/ROCm 迁移
+>
+> 社区说明：本文是面向 AMD GPU 爱好者和开发者的非官方整理，不代表 AMD、NVIDIA 或其他厂商的官方立场。
 
 ## 视频配图预览
 
 ![AMD 与 NVIDIA GPU 对照视频配图预览](output/gpu_mapping_visuals/gpu_mapping_visuals_contact_sheet.jpg)
 
-9 张 4K 视频配图位于 [`output/gpu_mapping_visuals/`](output/gpu_mapping_visuals/)，推荐镜头顺序和停留时长见 [`VIDEO_VISUALS_CN.md`](VIDEO_VISUALS_CN.md)。
+10 张 4K 视频配图位于 [`output/gpu_mapping_visuals/`](output/gpu_mapping_visuals/)，推荐镜头顺序和停留时长见 [`VIDEO_VISUALS_CN.md`](VIDEO_VISUALS_CN.md)。
 
 ## 1. 先说结论
 
@@ -66,6 +68,30 @@ AMD 和 NVIDIA 的产品、硬件单元与软件功能不存在严格的一一�
 | CDNA 1 / MI100 | Volta 至 Ampere 过渡期 | MI100 与 V100/A100 时代产品 |
 
 ![AMD 与 NVIDIA GPU 产品地图](output/gpu_mapping_visuals/01_product_landscape.png)
+
+### 2.1 社区视角：AMD GPU 有哪些实际优势
+
+先说一句不端水的话：
+
+> AMD 不一定在每个跑分、每款游戏和每个 AI 框架里都更快，但它经常能给开发者更宽裕的内存、更开放的软件栈，以及更大的折腾空间。
+
+以下是我们认为比较有吸引力的几点：
+
+| AMD 的优势 | 为什么开发者会在意 | 需要讲清楚的边界 |
+|---|---|---|
+| **显存和统一内存路线更大胆** | Radeon AI PRO R9700 提供 32GB；Instinct 从 MI300X 的 192GB、MI325X 的 256GB、MI355X 的 288GB，一直到 MI455X 的 432GB HBM4。部分 Ryzen AI Max 平台还能让 GPU 使用大容量统一内存。对本地大模型来说，“能不能完整放进去”有时比峰值算力更重要 | 大容量统一内存不等于 HBM 带宽；具体模型仍要考虑 KV Cache、算子支持和实际吞吐 |
+| **ROCm 是一套可以看、可以改、可以参与的开放软件栈** | ROCm、HIP、MIOpen、RCCL、AITER 等大量组件公开源码。遇到问题时可以读实现、自己编译、打补丁，而不只是等待黑盒更新 | 开放不等于开箱即用；版本组合、算子覆盖和文档体验仍需要继续完善 |
+| **HIP 给 CUDA 项目留了一条比较现实的迁移路线** | HIP 的编程模型接近 CUDA，并提供 HIPIFY 等迁移工具。维护得好的项目可以把后端抽象出来，同时支持 AMD 和 NVIDIA | 自定义 CUDA 内核、第三方扩展和极致性能调优通常仍需要人工处理，不是改个名字就能跑 |
+| **FSR/FidelityFX 对游戏开发者更包容** | FSR SDK 和 FidelityFX 组件公开，许多版本可以跨厂商、跨 API 集成。开发者不必把画质增强功能完全绑定到单一品牌硬件 | 最新的机器学习功能可能对 Radeon 世代有要求；部分游戏里 DLSS 的画质、稳定性或集成成熟度仍可能更好 |
+| **Linux 和开源社区更适合喜欢研究底层的人** | ROCm 与大量工具链组件可以查看源码，方便研究编译器、内核、性能分析和框架后端。对做系统、算子和 HPC 的开发者，这种可见性很有价值 | 对只想安装后立即运行的人来说，更高的可配置性有时也意味着更多环境问题需要自己解决 |
+| **数据中心正在走更开放的互连和机架路线** | AMD Helios 使用 UALink/UALoE 等开放互连路线，目标是让 CPU、GPU、网络和机架组件不必全部来自同一家厂商 | 这套生态仍在快速发展；NVLink/NVSwitch 在现有部署、工具和经验积累上依然更成熟 |
+| **CPU 与 GPU 的内存协同思路很有特色** | Ryzen AI Max 和 Instinct MI300A 都强调 CPU/GPU 紧密协作与共享或统一内存，适合本地 AI、HPC 和需要减少数据搬运的工作负载 | 统一内存的容量、带宽、NUMA 行为和编程体验会因平台而异，不能只看总内存数字 |
+
+一句话总结：
+
+> NVIDIA 的优势经常是“生态成熟、路径明确、拿来就用”；AMD 的吸引力经常是“内存宽裕、栈更开放、开发者能参与得更深”。
+
+![AMD GPU 的几个实际优势](output/gpu_mapping_visuals/10_amd_advantages.png)
 
 ## 3. 消费级游戏卡对位
 
@@ -612,6 +638,7 @@ vLLM 和 SGLang 的优化容器主要面向 Instinct。Radeon 上即使框架可
 - [NVIDIA RTX PRO 6000 Blackwell](https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000/)
 - [AMD Instinct MI455X](https://www.amd.com/en/products/accelerators/instinct/mi400/mi455x.html)
 - [AMD Helios](https://www.amd.com/en/products/rackscale-solutions/helios.html)
+- [AMD Ryzen AI Max](https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-max-plus-395.html)
 - [NVIDIA Vera Rubin](https://www.nvidia.com/en-us/data-center/technologies/rubin/)
 - [NVIDIA Vera Rubin NVL72](https://www.nvidia.com/en-us/data-center/vera-rubin-nvl72/)
 - [AMD Instinct MI350 Series](https://www.amd.com/en/products/accelerators/instinct/mi350.html)
@@ -621,6 +648,7 @@ vLLM 和 SGLang 的优化容器主要面向 Instinct。Radeon 上即使框架可
 ### 游戏与图形技术
 
 - [AMD FSR SDK](https://gpuopen.com/amd-fsr-sdk/)
+- [FidelityFX SDK on GPUOpen](https://gpuopen.com/manuals/fidelityfx_sdk/)
 - [NVIDIA DLSS](https://developer.nvidia.com/rtx/dlss)
 - [AMD Radeon Anti-Lag](https://www.amd.com/en/products/software/adrenalin/radeon-software-anti-lag.html)
 - [NVIDIA Reflex](https://www.nvidia.com/en-us/geforce/technologies/reflex/)
@@ -642,6 +670,7 @@ vLLM 和 SGLang 的优化容器主要面向 Instinct。Radeon 上即使框架可
 - [AMD Primus](https://github.com/AMD-AGI/Primus)
 - [AMD Quark Documentation](https://quark.docs.amd.com/latest/)
 - [AMD AITER](https://github.com/ROCm/aiter)
+- [UALink Consortium](https://ualinkconsortium.org/)
 - [NVIDIA CUDA Documentation](https://docs.nvidia.com/cuda/)
 - [AMD ROCm Libraries](https://rocm.docs.amd.com/en/latest/reference/api-libraries.html)
 - [NVIDIA CUDA Libraries](https://docs.nvidia.com/cuda/doc/index.html)
