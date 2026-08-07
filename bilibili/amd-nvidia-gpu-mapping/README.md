@@ -1,6 +1,6 @@
 # AMD GPU 与 NVIDIA GPU 产品及功能对应关系
 
-> 更新日期：2026-08-05
+> 更新日期：2026-08-07
 >
 > 适用场景：GPU 产品科普、技术学习、开发实践、CUDA/ROCm 迁移
 >
@@ -324,6 +324,12 @@ PyTorch、TensorFlow、JAX、ONNX Runtime、Triton、vLLM 和 SGLang 等框架�
 4. PyTorch、vLLM、SGLang、Primus 等应用容器。
 
 不要只升级其中一项。数据中心服务器应优先采用整机厂 BKC 或 AMD 官方容器，而不是在宿主机上自由组合不同发布日期的软件包。
+
+如果希望从查询 GPU `gfx` 代号开始，完整走一遍 ROCm、PyTorch、Docker、Windows/WSL2 和最小 Tensor 验证，可以参考这篇中文实战：
+
+> [AMD GPU 怎么跑 PyTorch？从查 gfx 到跑通第一个 Tensor（ROCm 7.14 实战）](https://github.com/AMD-AIM/zhihu_rednote_articles/blob/main/zhihu/AMD%20ROCm%E4%B8%8EPyTorch%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97-%E7%9F%A5%E4%B9%8E%E7%89%88.md)
+>
+> 该文以 ROCm Core SDK 7.14.0 和 PyTorch 2.12.0 为主线，属于中文社区实践资料。实际安装时仍应以目标 GPU、操作系统和 ROCm 官方兼容矩阵为准。
 
 ![ROCm 产品线版本选择](output/gpu_mapping_visuals/09_rocm_version_lanes.png)
 
@@ -674,3 +680,7 @@ vLLM 和 SGLang 的优化容器主要面向 Instinct。Radeon 上即使框架可
 - [NVIDIA CUDA Documentation](https://docs.nvidia.com/cuda/)
 - [AMD ROCm Libraries](https://rocm.docs.amd.com/en/latest/reference/api-libraries.html)
 - [NVIDIA CUDA Libraries](https://docs.nvidia.com/cuda/doc/index.html)
+
+### 中文社区实践资料
+
+- [AMD ROCm 与 PyTorch 安装指南：从查 gfx 到跑通第一个 Tensor（ROCm 7.14 / PyTorch 2.12）](https://github.com/AMD-AIM/zhihu_rednote_articles/blob/main/zhihu/AMD%20ROCm%E4%B8%8EPyTorch%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97-%E7%9F%A5%E4%B9%8E%E7%89%88.md)
