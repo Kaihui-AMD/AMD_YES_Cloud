@@ -327,7 +327,7 @@ PyTorch、TensorFlow、JAX、ONNX Runtime、Triton、vLLM 和 SGLang 等框架�
 
 如果希望从查询 GPU `gfx` 代号开始，完整走一遍 ROCm、PyTorch、Docker、Windows/WSL2 和最小 Tensor 验证，可以参考这篇中文实战：
 
-> [AMD GPU 怎么跑 PyTorch？从查 gfx 到跑通第一个 Tensor（ROCm 7.14 实战）](https://github.com/AMD-AIM/zhihu_rednote_articles/blob/main/zhihu/AMD%20ROCm%E4%B8%8EPyTorch%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97-%E7%9F%A5%E4%B9%8E%E7%89%88.md)
+> [AMD GPU 怎么跑 PyTorch？从查 gfx 到跑通第一个 Tensor（ROCm 7.14 实战）](<../AMD ROCm与PyTorch安装指南-知乎版.md>)
 >
 > 该文以 ROCm Core SDK 7.14.0 和 PyTorch 2.12.0 为主线，属于中文社区实践资料。实际安装时仍应以目标 GPU、操作系统和 ROCm 官方兼容矩阵为准。
 
@@ -683,4 +683,4 @@ vLLM 和 SGLang 的优化容器主要面向 Instinct。Radeon 上即使框架可
 
 ### 中文社区实践资料
 
-- [AMD ROCm 与 PyTorch 安装指南：从查 gfx 到跑通第一个 Tensor（ROCm 7.14 / PyTorch 2.12）](https://github.com/AMD-AIM/zhihu_rednote_articles/blob/main/zhihu/AMD%20ROCm%E4%B8%8EPyTorch%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97-%E7%9F%A5%E4%B9%8E%E7%89%88.md)
+- [AMD ROCm 与 PyTorch 安装指南：从查 gfx 到跑通第一个 Tensor（ROCm 7.14 / PyTorch 2.12）](<../AMD ROCm与PyTorch安装指南-知乎版.md>)
