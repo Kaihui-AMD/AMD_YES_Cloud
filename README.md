@@ -6,7 +6,7 @@
 
 ## 1. 进入活动页面并注册或登录
 
-进入 [AMD AI 开发者计划](https://developer.amd.com.cn/login?source=V3hensKGv)，登录后打开 **我的权益**，找到云算力或算例券相关权益并点击 **兑换**。
+进入 [AMD AI 开发者计划](https://developer.amd.com.cn/login?source=8EHcpUKwn)，登录后打开 **我的权益**，找到云算力或算例券相关权益并点击 **兑换**。
 
 初次进入页面时，请按提示完成账号注册、邮箱或手机号验证及登录。
 
