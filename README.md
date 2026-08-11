@@ -1,12 +1,12 @@
 # AMD YES Cloud：Credits 兑换与 Radeon Cloud 使用指南
 
-本指南介绍如何注册并登录 AMD 相关开发者平台、领取算例券、将算例券兑换为 AMD 开发者云 Credits，以及在 Radeon Cloud 中创建并启动自定义 Template。后续章节还包括 JupyterLab、SSH、OpenAI 兼容模型 API、Notebook 公网 Tunnel 和实例销毁等常用操作。
+本指南介绍如何注册并登录 AMD 相关开发者平台、领取算力券、将算力券兑换为 AMD 开发者云 Credits，以及在 Radeon Cloud 中创建并启动自定义 Template。后续章节还包括 JupyterLab、SSH、OpenAI 兼容模型 API、Notebook 公网 Tunnel 和实例销毁等常用操作。
 
 > 建议使用桌面浏览器完成操作。平台页面、可用镜像、模型名称及按钮文案可能随服务更新发生变化，请以实际页面为准。
 
 ## 1. 进入活动页面并注册或登录
 
-进入 [AMD AI 开发者计划](https://developer.amd.com.cn/login?source=8EHcpUKwn)，登录后打开 **我的权益**，找到云算力或算例券相关权益并点击 **兑换**。
+进入 [AMD AI 开发者计划](https://developer.amd.com.cn/login?source=8EHcpUKwn)，登录后打开 **我的权益**，找到云算力或算力券相关权益并点击 **兑换**。
 
 初次进入页面时，请按提示完成账号注册、邮箱或手机号验证及登录。
 
@@ -14,13 +14,13 @@
 
 *图 1：AMD AI 开发者计划活动及权益入口*
 
-## 2. 领取并兑换算例券
+## 2. 领取并兑换算力券
 
-在活动页面中按照页面提示申请算例券，并将算例券兑换为 AMD 开发者云 Credits。
+在活动页面中按照页面提示申请算力券，并将算力券兑换为 AMD 开发者云 Credits。
 
-<img width="2486" height="1128" alt="算例券与 AMD 开发者云 Credits 兑换流程" src="https://github.com/user-attachments/assets/c683f96b-6911-4485-8987-82eabcad396a" />
+<img width="2486" height="1128" alt="算力券与 AMD 开发者云 Credits 兑换流程" src="https://github.com/user-attachments/assets/c683f96b-6911-4485-8987-82eabcad396a" />
 
-*图 2：算例券与 AMD 开发者云 Credits 兑换流程*
+*图 2：算力券与 AMD 开发者云 Credits 兑换流程*
 
 提交申请后通常需要等待一段时间。原活动流程中约 5 分钟后会在兑换历史中出现 **查看云算力券** 按钮，点击后可查看后续兑换链接；实际到账时间请以页面状态为准。
 
@@ -34,7 +34,7 @@ Credits 到账后，打开 [AMD 开发者云](https://developer.amd.com.cn/radeo
 
 ![点击 AMD 开发者云](./assets/amd-developer-cloud-entry.png)
 
-进入 Radeon Cloud 后，点击右上角 **Login**，选择 **Login with Email** 并使用对应账号登录。
+进入 Radeon Cloud 后，点击右上角 **Login**，并使用对应账号登录。
 
 登录后点击右上角头像，在下拉菜单中选择 **Profile**。
 
