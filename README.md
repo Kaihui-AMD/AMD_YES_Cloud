@@ -3,7 +3,14 @@
 本指南介绍如何注册并登录 AMD 相关开发者平台、领取算力券、将算力券兑换为 AMD 开发者云 Credits，以及在 Radeon Cloud 中创建并启动自定义 Template。后续章节还包括 JupyterLab、SSH、OpenAI 兼容模型 API、Notebook 公网 Tunnel 和实例销毁等常用操作。
 
 > 建议使用桌面浏览器完成操作。平台页面、可用镜像、模型名称及按钮文案可能随服务更新发生变化，请以实际页面为准。
-
+```shell
+# 5条命令在cloud运行ComfyUI
+git -c http.sslVerify=false clone https://github.com/comfyanonymous/ComfyUI.git
+pip install -r ComfyUI/requirements.txt 
+/var/run/secrets/frp-self-service/install
+$HOME/.local/bin/rc-tunnel expose --port 8188
+python ComfyUI/main.py --port 8188 --listen 127.0.0.1 --enable-cors-header --enable-compress-response-body
+```
 ## 1. 进入活动页面并注册或登录
 
 进入 [AMD AI 开发者计划](https://developer.amd.com.cn/login?source=8EHcpUKwn)，登录后打开 **我的权益**，找到云算力或算力券相关权益并点击 **兑换**。
