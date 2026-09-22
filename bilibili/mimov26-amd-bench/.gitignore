@@ -1,0 +1,6 @@
+llama.cpp/
+models/*.gguf
+results/server.log
+*.aria2
+__pycache__/
+*.pyc

@@ -1,0 +1,57 @@
+{
+  "test_date": "2026-09-22",
+  "model": "XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B",
+  "quantization": "Q8_0",
+  "runtime": {
+    "os": "Ubuntu 24.04.3 LTS",
+    "kernel": "7.0.0-31-generic",
+    "rocm": "7.2.0",
+    "llama_cpp_commit": "0eadefebd3f8f92a86d634a0e5b8fffc9dc792c0",
+    "gpu": "AMD Radeon AI PRO R9700",
+    "gpu_arch": "gfx1201",
+    "gpu_count_used": 1,
+    "gpu_layers": "33/33",
+    "cpu_threads": 96,
+    "hip_graphs": false
+  },
+  "synthetic_benchmark": {
+    "flash_attention": true,
+    "warmup": true,
+    "repetitions": 5,
+    "pp512": {
+      "batch": 512,
+      "ubatch": 512,
+      "tokens_per_second_mean": 4278.56,
+      "tokens_per_second_stddev": 75.81
+    },
+    "pp2048": {
+      "batch": 512,
+      "ubatch": 512,
+      "tokens_per_second_mean": 4114.69,
+      "tokens_per_second_stddev": 5.58
+    },
+    "tg128": {
+      "batch": 64,
+      "ubatch": 64,
+      "tokens_per_second_mean": 53.10,
+      "tokens_per_second_stddev": 0.05
+    }
+  },
+  "text_smoke": {
+    "flash_attention": false,
+    "context_size": 8192,
+    "prompt_tokens_per_second": 65.4,
+    "generation_tokens_per_second": 51.8,
+    "vram_bytes_sample": 9239715840,
+    "gpu_utilization_percent_sample": 100,
+    "board_power_watts_sample": 192,
+    "quality_result": "failed_generated_lru_boundary_test"
+  },
+  "vision_smoke": {
+    "flash_attention": false,
+    "context_size": 8192,
+    "prompt_tokens_per_second": 177.5,
+    "generation_tokens_per_second": 50.6,
+    "quality_result": "all_chart_values_and_uplifts_correct"
+  }
+}
